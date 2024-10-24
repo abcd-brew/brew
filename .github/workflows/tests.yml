@@ -80,7 +80,7 @@ jobs:
   tap-syntax:
     name: tap syntax
     needs: syntax
-    if: github.repository_owner == 'Homebrew'
+    if: github.repository_owner == 'xycabcd'
     runs-on: macos-14
     steps:
       - name: Set up Homebrew
@@ -141,7 +141,7 @@ jobs:
   formula-audit:
     name: formula audit
     needs: syntax
-    if: github.repository_owner == 'Homebrew'
+    if: github.repository_owner == 'xycabcd'
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/homebrew/brew:master
@@ -166,7 +166,7 @@ jobs:
   cask-audit:
     name: cask audit
     needs: syntax
-    if: github.repository_owner == 'Homebrew'
+    if: github.repository_owner == 'xycabcd'
     runs-on: macos-15
     steps:
       - name: Set up Homebrew
@@ -363,7 +363,7 @@ jobs:
   test-default-formula:
     name: ${{ matrix.name }}
     needs: syntax
-    if: github.repository_owner == 'Homebrew'
+    if: github.repository_owner == 'xycabcd'
     runs-on: ${{ matrix.runs-on }}
     container: ${{ matrix.container }}
     strategy:
