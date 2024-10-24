@@ -20,7 +20,7 @@ RSpec.describe Homebrew::Cmd::Home do
 
   it "opens the project page when no formula or cask is specified", :integration_test do
     expect { brew "home", "HOMEBREW_BROWSER" => "echo" }
-      .to output("https://brew.sh\n").to_stdout
+      .to output("https://github.com/xycabcd/brew\n").to_stdout
       .and not_to_output.to_stderr
       .and be_a_success
   end

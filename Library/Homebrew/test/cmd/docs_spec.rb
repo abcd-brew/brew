@@ -8,7 +8,7 @@ RSpec.describe Homebrew::Cmd::Docs do
 
   it "opens the docs page", :integration_test do
     expect { brew "docs", "HOMEBREW_BROWSER" => "echo" }
-      .to output("https://docs.brew.sh\n").to_stdout
+      .to output("https://github.com/xycabcd/brew\n").to_stdout
       .and not_to_output.to_stderr
       .and be_a_success
   end
