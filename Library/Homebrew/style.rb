@@ -271,7 +271,7 @@ module Homebrew
 
     def self.run_shfmt(files, fix: false)
       files = shell_scripts if files.blank?
-      # Do not format completions and Dockerfile
+      # Do not format completions
       files.delete(HOMEBREW_REPOSITORY/"completions/bash/brew")
 
       args = ["--language-dialect", "bash", "--indent", "2", "--case-indent", "--", *files]
@@ -305,9 +305,6 @@ module Homebrew
       [
         HOMEBREW_BREW_FILE,
         HOMEBREW_REPOSITORY/"completions/bash/brew",
-        HOMEBREW_REPOSITORY/"Dockerfile",
-        *HOMEBREW_REPOSITORY.glob(".devcontainer/**/*.sh"),
-        *HOMEBREW_REPOSITORY.glob("package/scripts/*"),
         *HOMEBREW_LIBRARY.glob("Homebrew/**/*.sh").reject { |path| path.to_s.include?("/vendor/") },
         *HOMEBREW_LIBRARY.glob("Homebrew/shims/**/*").map(&:realpath).uniq
                          .reject(&:directory?)
