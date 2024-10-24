@@ -99,7 +99,6 @@ then
   HOMEBREW_REPOSITORY="${BREW_FILE_DIRECTORY%/*}"
 fi
 
-
 unset BREW_FILE_DIRECTORY
 
 # If the location of HOMEBREW_LIBRARY changes

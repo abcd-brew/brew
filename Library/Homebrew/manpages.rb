@@ -38,7 +38,7 @@ module Homebrew
       roff, warnings = Converter::Kramdown.convert(root)
       $stderr.puts(warnings)
       File.write(TARGET_MAN_PATH/"Manpage.md", roff)
-      
+
       roff, warnings = Converter::Roff.convert(root)
       $stderr.puts(warnings)
       File.write(TARGET_MAN_PATH/"brew.1", roff)
