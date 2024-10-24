@@ -1,0 +1,15 @@
+name: setup Homebrew test
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  main: 
+    runs-on: ubuntu-22.04
+    steps:
+      - name: setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          core: false
+          cask: false
+          test-bot: false
