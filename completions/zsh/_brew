@@ -163,7 +163,7 @@ __brew_internal_commands() {
     'determine-test-runners:Determines the runners used to test formulae or their dependents'
     'developer:Control Homebrew'\''s developer mode'
     'dispatch-build-bottle:Build bottles for these formulae with GitHub Actions'
-    'docs:Open Homebrew'\''s online documentation at https://docs.brew.sh in a browser'
+    'docs:Open Homebrew'\''s online documentation at https://github.com/xycabcd/brew in a browser'
     'doctor:Check your system for potential problems'
     'edit:Open a formula, cask or tap in the editor set by `EDITOR` or `HOMEBREW_EDITOR`, or open the Homebrew repository for editing if no argument is provided'
     'extract:Look through repository history to find the most recent version of formula and create a copy in tap'
@@ -202,7 +202,6 @@ __brew_internal_commands() {
     'rbenv-sync:Create symlinks for Homebrew'\''s installed Ruby versions in `~/.rbenv/versions`'
     'readall:Import all items from the specified tap, or from all installed taps if none is provided'
     'reinstall:Uninstall and then reinstall a formula or cask using the same options it was originally installed with, plus any appended options specific to a formula'
-    'release:Create a new draft Homebrew/brew release with the appropriate version number and release notes'
     'rubocop:Installs, configures and runs Homebrew'\''s `rubocop`'
     'ruby:Run a Ruby instance with Homebrew'\''s libraries loaded'
     'rubydoc:Generate Homebrew'\''s RubyDoc documentation'
@@ -1672,17 +1671,6 @@ _brew_reinstall() {
     - cask \
     '(--formulae --build-from-source --interactive --force-bottle --keep-tmp --debug-symbols --git)--cask[Treat all named arguments as casks]' \
     '*::cask:__brew_casks'
-}
-
-# brew release
-_brew_release() {
-  _arguments \
-    '--debug[Display any debugging information]' \
-    '--help[Show this message]' \
-    '(--minor)--major[Create a major release]' \
-    '(--major)--minor[Create a minor release]' \
-    '--quiet[Make some output more quiet]' \
-    '--verbose[Make some output more verbose]'
 }
 
 # brew remove

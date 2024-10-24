@@ -678,7 +678,7 @@ __fish_brew_complete_arg 'dispatch-build-bottle' -l workflow -d 'Dispatch specif
 __fish_brew_complete_arg 'dispatch-build-bottle' -a '(__fish_brew_suggest_formulae_all)'
 
 
-__fish_brew_complete_cmd 'docs' 'Open Homebrew\'s online documentation at https://docs.brew.sh in a browser'
+__fish_brew_complete_cmd 'docs' 'Open Homebrew\'s online documentation at https://github.com/xycabcd/brew in a browser'
 __fish_brew_complete_arg 'docs' -l debug -d 'Display any debugging information'
 __fish_brew_complete_arg 'docs' -l help -d 'Show this message'
 __fish_brew_complete_arg 'docs' -l quiet -d 'Make some output more quiet'
@@ -1354,15 +1354,6 @@ __fish_brew_complete_arg 'reinstall' -l vst3-plugindir -d 'Target location for V
 __fish_brew_complete_arg 'reinstall' -l zap -d 'For use with `brew reinstall --cask`. Remove all files associated with a cask. *May remove files which are shared between applications.*'
 __fish_brew_complete_arg 'reinstall; and not __fish_seen_argument -l cask -l casks' -a '(__fish_brew_suggest_formulae_all)'
 __fish_brew_complete_arg 'reinstall; and not __fish_seen_argument -l formula -l formulae' -a '(__fish_brew_suggest_casks_all)'
-
-
-__fish_brew_complete_cmd 'release' 'Create a new draft Homebrew/brew release with the appropriate version number and release notes'
-__fish_brew_complete_arg 'release' -l debug -d 'Display any debugging information'
-__fish_brew_complete_arg 'release' -l help -d 'Show this message'
-__fish_brew_complete_arg 'release' -l major -d 'Create a major release'
-__fish_brew_complete_arg 'release' -l minor -d 'Create a minor release'
-__fish_brew_complete_arg 'release' -l quiet -d 'Make some output more quiet'
-__fish_brew_complete_arg 'release' -l verbose -d 'Make some output more verbose'
 
 
 __fish_brew_complete_cmd 'remove' 'Uninstall a formula or cask'

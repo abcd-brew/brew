@@ -80,7 +80,6 @@ pyenv-sync
 rbenv-sync
 readall
 reinstall
-release
 remove
 rm
 rubocop

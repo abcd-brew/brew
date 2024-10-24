@@ -2020,24 +2020,6 @@ _brew_reinstall() {
   __brew_complete_casks
 }
 
-_brew_release() {
-  local cur="${COMP_WORDS[COMP_CWORD]}"
-  case "${cur}" in
-    -*)
-      __brewcomp "
-      --debug
-      --help
-      --major
-      --minor
-      --quiet
-      --verbose
-      "
-      return
-      ;;
-    *) ;;
-  esac
-}
-
 _brew_remove() {
   local cur="${COMP_WORDS[COMP_CWORD]}"
   case "${cur}" in
@@ -2959,7 +2941,6 @@ _brew() {
     rbenv-sync) _brew_rbenv_sync ;;
     readall) _brew_readall ;;
     reinstall) _brew_reinstall ;;
-    release) _brew_release ;;
     remove) _brew_remove ;;
     rm) _brew_rm ;;
     rubocop) _brew_rubocop ;;
