@@ -273,7 +273,6 @@ module Homebrew
       files = shell_scripts if files.blank?
       # Do not format completions and Dockerfile
       files.delete(HOMEBREW_REPOSITORY/"completions/bash/brew")
-      files.delete(HOMEBREW_REPOSITORY/"Dockerfile")
 
       args = ["--language-dialect", "bash", "--indent", "2", "--case-indent", "--", *files]
       args.unshift("--write") if fix # need to add before "--"
