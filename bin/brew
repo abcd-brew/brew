@@ -86,6 +86,7 @@ HOMEBREW_PREFIX="${HOMEBREW_BREW_FILE%/*/*}"
 # Default to / prefix if unset or the bin/brew file.
 if [[ -z "${HOMEBREW_PREFIX}" || "${HOMEBREW_PREFIX}" = "${HOMEBREW_BREW_FILE}" ]]
 then
+  echo "WARNING: Default to / prefix if unset or the bin/brew file."
   HOMEBREW_PREFIX="/"
 fi
 
@@ -98,17 +99,6 @@ then
   HOMEBREW_REPOSITORY="${BREW_FILE_DIRECTORY%/*}"
 fi
 
-# Try to find a /usr/local HOMEBREW_PREFIX where possible (for macOS x86_64 bottles)
-if [[ -L "/usr/local/bin/brew" && ! -L "${HOMEBREW_PREFIX}/Cellar" ]]
-then
-  USR_LOCAL_BREW_FILE_DIRECTORY="$(symlink_target_directory "/usr/local/bin/brew" "/usr/local/bin")"
-  USR_LOCAL_HOMEBREW_REPOSITORY="${USR_LOCAL_BREW_FILE_DIRECTORY%/*}"
-  if [[ "${HOMEBREW_REPOSITORY}" = "${USR_LOCAL_HOMEBREW_REPOSITORY}" ]]
-  then
-    HOMEBREW_PREFIX="/usr/local"
-  fi
-  unset USR_LOCAL_BREW_FILE_DIRECTORY USR_LOCAL_HOMEBREW_REPOSITORY
-fi
 
 unset BREW_FILE_DIRECTORY
 
@@ -130,33 +120,8 @@ export_homebrew_env_file() {
   done <"${env_file}"
 }
 
-# First, load the system-wide configuration.
-unset SYSTEM_ENV_TAKES_PRIORITY
-if [[ -n "${HOMEBREW_SYSTEM_ENV_TAKES_PRIORITY-}" ]]
-then
-  SYSTEM_ENV_TAKES_PRIORITY="1"
-else
-  export_homebrew_env_file "/etc/homebrew/brew.env"
-fi
-
-# Next, load the prefix configuration
-export_homebrew_env_file "${HOMEBREW_PREFIX}/etc/homebrew/brew.env"
-
-# Finally, load the user configuration
-if [[ -n "${XDG_CONFIG_HOME-}" ]]
-then
-  HOMEBREW_USER_CONFIG_HOME="${XDG_CONFIG_HOME}/homebrew"
-else
-  HOMEBREW_USER_CONFIG_HOME="${HOME}/.homebrew"
-fi
-
+HOMEBREW_USER_CONFIG_HOME="${HOMEBREW_REPOSITORY}/Library/Configs"
 export_homebrew_env_file "${HOMEBREW_USER_CONFIG_HOME}/brew.env"
-
-# If the system configuration takes priority, load it last.
-if [[ -n "${SYSTEM_ENV_TAKES_PRIORITY-}" ]]
-then
-  export_homebrew_env_file "/etc/homebrew/brew.env"
-fi
 
 # Copy and export all HOMEBREW_* variables previously mentioned in
 # manpage or used elsewhere by Homebrew.

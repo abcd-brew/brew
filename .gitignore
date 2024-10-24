@@ -19,6 +19,9 @@
 /Library/Homebrew/test/fs_leak_log
 /Library/Homebrew/vendor/portable-ruby
 /Library/Taps
+/Library/Caches
+/Library/Configs
+/Library/Logs
 /Library/PinnedTaps
 /Library/Homebrew/.byebug_history
 /Library/Homebrew/test/.rdbg_history

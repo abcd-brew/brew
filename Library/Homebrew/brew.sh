@@ -49,10 +49,11 @@ else
   HOMEBREW_DEFAULT_REPOSITORY="${HOMEBREW_GENERIC_DEFAULT_REPOSITORY}"
 fi
 
+HOMEBREW_DEFAULT_CACHE="${HOMEBREW_REPOISTORY}/Library/Caches"
+HOMEBREW_DEFAULT_LOGS="${HOMEBREW_REPOSITORY}/Library/Logs"
+
 if [[ -n "${HOMEBREW_MACOS}" ]]
 then
-  HOMEBREW_DEFAULT_CACHE="${HOME}/Library/Caches/Homebrew"
-  HOMEBREW_DEFAULT_LOGS="${HOME}/Library/Logs/Homebrew"
   HOMEBREW_DEFAULT_TEMP="/private/tmp"
 
   HOMEBREW_MACOS_VERSION="$(/usr/bin/sw_vers -productVersion)"
@@ -62,9 +63,6 @@ then
 
   unset MACOS_VERSION_ARRAY
 else
-  CACHE_HOME="${HOMEBREW_XDG_CACHE_HOME:-${HOME}/.cache}"
-  HOMEBREW_DEFAULT_CACHE="${CACHE_HOME}/Homebrew"
-  HOMEBREW_DEFAULT_LOGS="${CACHE_HOME}/Homebrew/Logs"
   HOMEBREW_DEFAULT_TEMP="/tmp"
 fi
 
@@ -898,7 +896,7 @@ then
   export HOMEBREW_RUBY_WARNINGS="-W1"
 fi
 
-export HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/Homebrew/brew"
+export HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/xycabcd/brew"
 if [[ -z "${HOMEBREW_BREW_GIT_REMOTE}" ]]
 then
   HOMEBREW_BREW_GIT_REMOTE="${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}"
