@@ -13,3 +13,4 @@ jobs:
           core: false
           cask: false
           test-bot: false
+          debug: true
