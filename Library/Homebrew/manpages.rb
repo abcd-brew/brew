@@ -6,7 +6,7 @@ require "erb"
 
 SOURCE_PATH = (HOMEBREW_LIBRARY_PATH/"manpages").freeze
 TARGET_MAN_PATH = (HOMEBREW_REPOSITORY/"manpages").freeze
-TARGET_DOC_PATH = (HOMEBREW_REPOSITORY/"docs").freeze
+
 module Homebrew
   # Helper functions for generating homebrew manual.
   module Manpages
@@ -37,8 +37,8 @@ module Homebrew
 
       roff, warnings = Converter::Kramdown.convert(root)
       $stderr.puts(warnings)
-      File.write(TARGET_DOC_PATH/"Manpage.md", roff)
-
+      File.write(TARGET_MAN_PATH/"Manpage.md", roff)  
+      
       roff, warnings = Converter::Roff.convert(root)
       $stderr.puts(warnings)
       File.write(TARGET_MAN_PATH/"brew.1", roff)
@@ -46,7 +46,7 @@ module Homebrew
 
     def self.build_man_page(quiet:)
       template = (SOURCE_PATH/"brew.1.md.erb").read
-      readme = HOMEBREW_REPOSITORY/"README.md"
+      readme = HOMEBREW_REPOSITORY/"THANKS.txt"
       variables = Variables.new(
         commands:                   generate_cmd_manpages(Commands.internal_commands_paths),
         developer_commands:         generate_cmd_manpages(Commands.internal_developer_commands_paths),

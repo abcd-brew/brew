@@ -11,10 +11,10 @@
 # - For environment variables: Edit `Library/Homebrew/env_config.rb`.
 # - For other changes: Edit this file.
 #
-# When done, regenerate the man page and its HTML version by running
+# When done, regenerate the man page by running
 # `brew generate-man-completions`.
 %>
-brew(1) -- The Missing Package Manager for macOS (or Linux)
+brew(1) -- abcd's brew, Homebrew but fit different ideas
 ===========================================================
 
 ## SYNOPSIS
@@ -173,18 +173,10 @@ example, run `export HOMEBREW_NO_INSECURE_REDIRECT=1` rather than just
 `export HOMEBREW_NO_INSECURE_REDIRECT`.
 
 `HOMEBREW_*` environment variables can also be set in Homebrew's environment
-files:
+file: 
 
-* `/etc/homebrew/brew.env` (system-wide)
+* `$HOMEBREW_REPOSITORY/Library/Configs/brew.env`
 
-* `$HOMEBREW_PREFIX/etc/homebrew/brew.env` (prefix-specific)
-
-* `$XDG_CONFIG_HOME/homebrew/brew.env` if `$XDG_CONFIG_HOME` is set or
-  `$HOME/.homebrew/brew.env` otherwise (user-specific)
-
-User-specific environment files take precedence over prefix-specific files and
-prefix-specific files take precedence over system-wide files (unless
-`HOMEBREW_SYSTEM_ENV_TAKES_PRIORITY` is set, see below).
 
 Note that these files do not support shell variable expansion e.g. `$HOME` or
 command execution e.g. `$(cat file)`.
@@ -208,13 +200,17 @@ And for an authenticated HTTP proxy:
 
 ## SEE ALSO
 
-Homebrew Documentation: <https://docs.brew.sh>
+Homebrew Documentation: <https://github.com/xycabcd/brew>
 
-Homebrew API: <https://rubydoc.brew.sh>
+Homebrew API: NOT AVALIBLE
 
 `git`(1), `git-log`(1)
 
 ## AUTHORS
+
+abcd's brew's author is xycabcd
+
+upstream Homebrew authors:
 
 <%= lead.concat("\n") %>
 
@@ -228,11 +224,17 @@ Homebrew API: <https://rubydoc.brew.sh>
 
 ## BUGS
 
-See our issues on GitHub:
+abcd's brew issues:
+
+NOT AVALIBLE
+
+Homebrew upstream issues:
 
 **Homebrew/brew**
 
 : <https://github.com/Homebrew/brew/issues>
+
+Homebrew tap issues:
 
 **Homebrew/homebrew-core**
 
