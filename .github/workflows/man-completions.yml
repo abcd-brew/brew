@@ -27,7 +27,7 @@ defaults:
 jobs:
   updates:
     runs-on: ubuntu-22.04
-    if: github.repository == 'Homebrew/brew'
+    if: github.repository == 'xycabcd/brew'
     steps:
       - name: Setup Homebrew
         id: set-up-homebrew
