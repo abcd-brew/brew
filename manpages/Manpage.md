@@ -2848,10 +2848,6 @@ working directory.
 
 Update SPDX license data in the Homebrew repository.
 
-### `update-maintainers`
-
-Update the list of maintainers in the `Homebrew/brew` README.
-
 ### `update-python-resources` \[*`options`*\] *`formula`* \[...\]
 
 Update versions for PyPI resource blocks in *`formula`*.
@@ -2890,10 +2886,6 @@ Update versions for PyPI resource blocks in *`formula`*.
 `--exclude-packages`
 
 : Exclude these packages when finding resources.
-
-### `update-sponsors`
-
-Update the list of GitHub Sponsors in the `Homebrew/brew` README.
 
 ### `update-test` \[*`options`*\]
 
@@ -4147,11 +4139,11 @@ Homebrew's Technical Steering Committee is Bo Anderson, FX Coudert, Michka
 Popoff, Mike McQuaid and Rylan Polster.
 
 Homebrew's maintainers are Alexander Bayandin, Bevan Kay, Bo Anderson, Branch
-Vincent, Caleb Xu, Carlo Cabrera, Daeho Ro, Douglas Eichelberger, Dustin
-Rodrigues, Eric Knibbe, FX Coudert, Issy Long, Justin Krehel, Klaus Hipp, Markus
-Reiter, Michael Cho, Michka Popoff, Mike McQuaid, Nanda H Krishna, Patrick
-Linnane, Rui Chen, Ruoyu Zhong, Rylan Polster, Sam Ford, Sean Molenaar, Thierry
-Moisan, Timothy Sutton, William Woodruff and Štefan Baebler.
+Vincent, Caleb Xu, Carlo Cabrera, Douglas Eichelberger, Dustin Rodrigues, Eric
+Knibbe, FX Coudert, Issy Long, Justin Krehel, Klaus Hipp, Markus Reiter, Michael
+Cho, Michka Popoff, Mike McQuaid, Nanda H Krishna, Patrick Linnane, Rui Chen,
+Ruoyu Zhong, Rylan Polster, Sam Ford, Sean Molenaar, Thierry Moisan, Timothy
+Sutton, William Woodruff and Štefan Baebler.
 
 Former maintainers with significant contributions include Miccal Matthews, Misty
 De Méo, Shaun Jackman, Vítor Galvão, Claudia Pellegrino, Seeker, Jan Viljanen,

@@ -107,10 +107,8 @@ untap
 up
 update
 update-license-data
-update-maintainers
 update-python-resources
 update-reset
-update-sponsors
 update-test
 upgrade
 uses
