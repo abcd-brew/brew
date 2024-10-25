@@ -40,7 +40,7 @@ jobs:
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@master
         with:
-          username: BrewTestBot
+          username: xycabcd-bot
 
       - name: Set up commit signing
         uses: Homebrew/actions/setup-commit-signing@master
