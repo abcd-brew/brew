@@ -1,6 +1,6 @@
 # abcd's brew
 
-[![Tests](https://github.com/xycabcd/brew/actions/workflows/tests.yml/badge.svg)](https://github.com/xycabcd/brew/actions/workflows/tests.yml)
+Testing: [![](https://github.com/xycabcd/brew/actions/workflows/tests.yml/badge.svg)](https://github.com/xycabcd/brew/actions/workflows/tests.yml)
 
 WARNING: PRE_RELEASE
 
