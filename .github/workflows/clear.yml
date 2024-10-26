@@ -4,7 +4,7 @@ on:
 
 jobs:
   job:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
