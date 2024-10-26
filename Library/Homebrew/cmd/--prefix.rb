@@ -15,7 +15,6 @@ module Homebrew
         .github/*
         bin/brew
         completions/zsh/_brew
-        docs/*
         lib/gdk-pixbuf-2.0/*
         lib/gio/*
         lib/node_modules/*
