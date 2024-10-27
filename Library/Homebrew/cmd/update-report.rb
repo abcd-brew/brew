@@ -114,7 +114,7 @@ module Homebrew
           old_tag = Settings.read "latesttag"
 
           new_tag = Utils.popen_read(
-            "git", "-C", HOMEBREW_REPOSITORY, "tag", "--list", "--sort=-version:refname", "*.*-*.*x"
+            "git", "-C", HOMEBREW_REPOSITORY, "tag", "--list", "--sort=-version:refname", "*.*-*.*"
           ).lines.first.chomp
 
           Settings.write "latesttag", new_tag if new_tag != old_tag
