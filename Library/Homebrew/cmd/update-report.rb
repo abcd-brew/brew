@@ -295,7 +295,7 @@ module Homebrew
           The upstream #{new_tag_upstream} changelog can be found at:
             #{Formatter.url("https://github.com/Homebrew/brew/releases/tag/#{new_tag_upstream}")}
         EOS
-        
+        puts
         puts <<~EOS
             The abcd's brew #{new_tag_fork} changelog can be found (if exist) at:
               #{Formatter.url("https://github.com/xycabcd/brew/releases/tag/#{new_tag_fork}")}
@@ -396,7 +396,7 @@ module Homebrew
       def donation_message
         return if Settings.read("donationmessage") == "true"
 
-        ohai "Homebrew is run entirely by unpaid volunteers. Please consider donating:"
+        ohai "Our upstream, Homebrew, is run entirely by unpaid volunteers. Please consider donating:"
         puts "  #{Formatter.url("https://github.com/Homebrew/brew#donations")}\n\n"
 
         # Consider the message possibly missed if not a TTY.
