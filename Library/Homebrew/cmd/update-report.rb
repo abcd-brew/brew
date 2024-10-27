@@ -298,6 +298,7 @@ module Homebrew
         puts <<~EOS
             The abcd's brew #{new_tag_fork} changelog can be found (if exist) at:
               #{Formatter.url("https://github.com/xycabcd/brew/releases/tag/#{new_tag_fork}")}
+        EOS
       end
 
       def no_changes_message
