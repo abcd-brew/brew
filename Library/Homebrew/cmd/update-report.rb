@@ -279,9 +279,7 @@ module Homebrew
         new_tag_fork, new_tag_upstream = new_tag.split("-")
         old_tag_fork, old_tag_upstream = old_tag.split("-") if old_tag.present?
         new_major_version, new_minor_version, new_patch_version = new_tag_upstream.split(".").map(&:to_i)
-        if old_tag_upstream.present?
-            old_major_version, old_minor_version = (old_tag_upstream.split(".")[0, 2]).map(&:to_i)
-        end
+        old_major_version, old_minor_version = (old_tag_upstream.split(".")[0, 2]).map(&:to_i) if old_tag_upstream.present?
         if old_tag_upstream.blank? || new_major_version > old_major_version || new_minor_version > old_minor_version
           puts <<~EOS
             The upstream #{new_major_version}.#{new_minor_version}.0 release notes are available on the Homebrew Blog:
@@ -297,8 +295,8 @@ module Homebrew
         EOS
         puts
         puts <<~EOS
-          The abcd's brew #{new_tag_fork} changelog can be found (if exist) at:
-            #{Formatter.url("https://github.com/xycabcd/brew/releases/tag/#{new_tag_fork}")}
+          The #{new_tag_fork} changelog can be found (if exist) at:
+            #{Formatter.url("https://github.com/xycabcd/brew/releases/tag/#{new_tag}")}
         EOS
       end
 
