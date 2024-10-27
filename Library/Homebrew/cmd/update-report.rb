@@ -114,7 +114,7 @@ module Homebrew
           old_tag = Settings.read "latesttag"
 
           new_tag = Utils.popen_read(
-            "git", "-C", HOMEBREW_REPOSITORY, "tag", "--list", "--sort=-version:refname", "*.*"
+            "git", "-C", HOMEBREW_REPOSITORY, "tag", "--list", "--sort=-version:refname", "*.*-*.*x"
           ).lines.first.chomp
 
           Settings.write "latesttag", new_tag if new_tag != old_tag
@@ -275,12 +275,15 @@ module Homebrew
         return if new_tag.blank? || new_tag == old_tag || args.quiet?
 
         puts
+        
 
-        new_major_version, new_minor_version, new_patch_version = new_tag.split(".").map(&:to_i)
-        old_major_version, old_minor_version = (old_tag.split(".")[0, 2]).map(&:to_i) if old_tag.present?
-        if old_tag.blank? || new_major_version > old_major_version || new_minor_version > old_minor_version
+        new_tag_fork, new_tag_upstream = new_tag.split("-")
+        old_tag_fork, old_tag_upstream = old_tag.split("-")
+        new_major_version, new_minor_version, new_patch_version = new_tag_upstream.split(".").map(&:to_i)
+        old_major_version, old_minor_version = (old_tag_upstream.split(".")[0, 2]).map(&:to_i) if old_tag_upstream.present?
+        if old_tag_upstream.blank? || new_major_version > old_major_version || new_minor_version > old_minor_version
           puts <<~EOS
-            The #{new_major_version}.#{new_minor_version}.0 release notes are available on the Homebrew Blog:
+            The upstream #{new_major_version}.#{new_minor_version}.0 release notes are available on the Homebrew Blog:
               #{Formatter.url("https://brew.sh/blog/#{new_major_version}.#{new_minor_version}.0")}
           EOS
         end
@@ -288,9 +291,13 @@ module Homebrew
         return if new_patch_version.zero?
 
         puts <<~EOS
-          The #{new_tag} changelog can be found at:
-            #{Formatter.url("https://github.com/Homebrew/brew/releases/tag/#{new_tag}")}
+          The upstream #{new_tag_upstream} changelog can be found at:
+            #{Formatter.url("https://github.com/Homebrew/brew/releases/tag/#{new_tag_upstream}")}
         EOS
+        
+        puts <<~EOS
+            The abcd's brew #{new_tag_fork} changelog can be found (if exist) at:
+              #{Formatter.url("https://github.com/xycabcd/brew/releases/tag/#{new_tag_fork}")}
       end
 
       def no_changes_message
