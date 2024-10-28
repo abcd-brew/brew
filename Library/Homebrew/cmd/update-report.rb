@@ -276,8 +276,8 @@ module Homebrew
 
         puts
         
-        new_tag_upstream, new_tag_fork = new_tag.split("-")
-        old_tag_upstream, old_tag_fork = old_tag.split("-") if old_tag.present?
+        new_tag_fork, new_tag_upstream = new_tag.split("-")
+        old_tag_fork, old_tag_upstream = old_tag.split("-") if old_tag.present?
         
         new_major_version, new_minor_version, new_patch_version = new_tag_upstream.split(".").map(&:to_i)
         old_major_version, old_minor_version = (old_tag_upstream.split(".")[0, 2]).map(&:to_i) if old_tag_upstream.present?

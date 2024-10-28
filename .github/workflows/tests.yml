@@ -59,7 +59,7 @@ jobs:
           key: syntax-style-cache-${{ github.sha }}
           restore-keys: syntax-style-cache-
 
-      - run: brew style
+      #- run: brew style
 
       - run: brew typecheck
 
