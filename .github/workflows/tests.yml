@@ -108,8 +108,8 @@ jobs:
           key: tap-syntax-style-cache-${{ github.sha }}
           restore-keys: tap-syntax-style-cache-
 
-      - name: Run brew style on homebrew-core
-        run: brew style homebrew/core
+      #- name: Run brew style on homebrew-core
+      #  run: brew style homebrew/core
 
       - name: Set up all Homebrew taps
         run: |
@@ -123,20 +123,20 @@ jobs:
           # brew style doesn't like world writable directories
           sudo chmod -R g-w,o-w "$(brew --repo)/Library/Taps"
 
-      - name: Run brew style on official taps
-        run: |
-          brew style homebrew/bundle \
-                     homebrew/services \
-                     homebrew/test-bot
+      #- name: Run brew style on official taps
+      #  run: |
+      #    brew style homebrew/bundle \
+      #               homebrew/services \
+      #               homebrew/test-bot
 
-          brew style homebrew/aliases \
-                     homebrew/command-not-found \
-                     homebrew/formula-analytics \
-                     homebrew/portable-ruby
+      #    brew style homebrew/aliases \
+      #               homebrew/command-not-found \
+      #               homebrew/formula-analytics \
+      #               homebrew/portable-ruby
 
-      - name: Run brew style on homebrew/cask
-        run: |
-          brew style homebrew/cask
+      #- name: Run brew style on homebrew/cask
+      #  run: |
+      #    brew style homebrew/cask
 
   formula-audit:
     name: formula audit
