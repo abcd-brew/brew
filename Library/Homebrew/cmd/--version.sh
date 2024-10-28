@@ -24,7 +24,7 @@ version_string() {
 }
 
 homebrew-version() {
-  echo "abc's brew ${HOMEBREW_VERSION}"
+  echo "abcd's brew ${HOMEBREW_VERSION}"
 
   if [[ -n "${HOMEBREW_NO_INSTALL_FROM_API}" || -d "${HOMEBREW_CORE_REPOSITORY}" ]]
   then
