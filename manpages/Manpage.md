@@ -7,9 +7,11 @@
 
 ## DESCRIPTION
 
-Homebrew is the easiest and most flexible way to install the UNIX tools Apple
-didn't include with macOS. It can also install software not packaged for your
-Linux distribution without requiring `sudo`.
+abcd's brew is a fork of the modern day PC package manager Homebrew.
+
+Home site:
+
+: <https://github.com/xycabcd/brew>
 
 ## TERMINOLOGY
 
@@ -2847,6 +2849,10 @@ working directory.
 ### `update-license-data`
 
 Update SPDX license data in the Homebrew repository.
+
+### `update-maintainers`
+
+Update the list of maintainers in the `Homebrew/brew` README.
 
 ### `update-python-resources` \[*`options`*\] *`formula`* \[...\]
 
