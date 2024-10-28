@@ -359,11 +359,6 @@ module Homebrew
         else T.absurd(e)
         end
 
-        if name == "updog"
-          ofail "What's updog?"
-          return
-        end
-
         opoo e
 
         reason = MissingFormula.reason(name, silent: true)
