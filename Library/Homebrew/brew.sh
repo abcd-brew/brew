@@ -148,10 +148,6 @@ case "$@" in
     echo "${HOMEBREW_REPOSITORY}"
     exit 0
     ;;
-  --caskroom)
-    echo "${HOMEBREW_CASKROOM}"
-    exit 0
-    ;;
   --cache)
     echo "${HOMEBREW_CACHE}"
     exit 0

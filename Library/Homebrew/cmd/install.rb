@@ -124,6 +124,7 @@ module Homebrew
         end
         formula_options
         [
+          [:switch, "--cask", "--casks", { description: "Treat all named arguments as casks." }],
           [:switch, "--[no-]binaries", {
             description: "Disable/enable linking of helper executables (default: enabled).",
             env:         :cask_opts_binaries,
@@ -139,6 +140,9 @@ module Homebrew
           [:switch, "--adopt", {
             description: "Adopt existing artifacts in the destination that are identical to those being installed. " \
                          "Cannot be combined with `--force`.",
+          }],
+          [:switch, "--skip-cask-deps", {
+            description: "Skip installing cask dependencies.",
           }],
           [:switch, "--zap", {
             description: "For use with `brew reinstall --cask`. Remove all files associated with a cask. " \
@@ -353,6 +357,11 @@ module Homebrew
         when FormulaOrCaskUnavailableError then e.name
         when Cask::CaskUnavailableError then e.token
         else T.absurd(e)
+        end
+
+        if name == "updog"
+          ofail "What's updog?"
+          return
         end
 
         opoo e
