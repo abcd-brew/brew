@@ -1,4 +1,3 @@
-@ -1,9 +0,0 @@
 Homebrew's [Project Leader](https://docs.brew.sh/Homebrew-Governance#6-project-leader) is [Mike McQuaid](https://github.com/MikeMcQuaid).
 
 Homebrew's [Project Leadership Committee](https://docs.brew.sh/Homebrew-Governance#4-project-leadership-committee) is [Colin Dean](https://github.com/colindean), [Issy Long](https://github.com/issyl0), [Mike McQuaid](https://github.com/MikeMcQuaid), [Patrick Linnane](https://github.com/p-linnane) and [Vanessa Gennarelli](https://github.com/mozzadrella).
